@@ -11,6 +11,7 @@ const tail = function(array) {
   return tail;
 };
 
+
 //test case 1
 // const testArray = ['Lighthouse', 'Labs', 'Exercise'];
 // const result = tail(testArray);
