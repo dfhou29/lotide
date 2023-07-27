@@ -23,8 +23,8 @@ const eqArrays = function(actual, expected) {
 const eqObjects = function(object1, object2) {
 
   if (Object.keys(object1).length !== Object.keys(object2).length) {
-    console.log("length1:", Object.keys(object1).length);
-    console.log("length2:", Object.keys(object2).length);
+    // onsole.log("length1:", Object.keys(object1).length);
+    // console.log("length2:", Object.keys(object2).length);
     return false;
   }
 
@@ -44,6 +44,10 @@ const eqObjects = function(object1, object2) {
   return true;
 };
 
+const assertObjectsEqual = function(actual, expected) {
+  const inspect = require('util').inspect;
+  eqObjects(actual, expected) ? console.log(`✅Assertion passed: ${inspect(actual)} === ${inspect(expected)}`) : console.log(`❌Assertion failed: ${inspect(actual)} !== ${inspect(expected)}`);
+};
 
 const bmw = {color: ["white", "black"], coupe: false};
 const audi = {coupe: false, color: ["white", "black"]};
@@ -51,5 +55,5 @@ const iPhone = {color: "black", ram: ["8GB", "16GB"]};
 const pixel = {color: "black", ram: ["8GB", "16GB"], make: "China"};
 
 
-assertEqual(eqObjects(bmw, audi), true);
-assertEqual(eqObjects(iPhone, pixel), false);
+assertObjectsEqual(bmw,audi);
+assertObjectsEqual(iPhone, pixel);
