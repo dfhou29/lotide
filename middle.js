@@ -1,25 +1,7 @@
-const eqArrays = function(actual, expected) {
-  if (actual.length !== expected.length) {
-    return false;
-  }
-  for (let x = 0; x < actual.length; x++) {
-    if (actual[x] !== expected[x]) {
-      return false;
-    }
-  }
-  return true;
-};
-
-const assertArraysEqual = function(actual, expected) {
-  eqArrays(actual, expected) ? console.log(`✅Assertion passed: ${actual} === ${expected}`) : console.log(`❌Assertion failed: ${actual} !== ${expected}`);
-};
-
-
-
 const middle = function(arr) {
   //helper function to determine if an array has even numbers of elements
   const arrayIsEven = function(arr) {
-    return arr.length % 2 === 0 ? true : false;
+    return arr.length % 2 === 0;
   };
 
   let output = [];
@@ -45,15 +27,7 @@ const middle = function(arr) {
   } else {
     output = [];
   }
-  console.log('output:', output);
   return output;
 };
 
-
-middle([1,2,3,4,5]);
-
-assertArraysEqual(middle([1]), []);
-assertArraysEqual(middle([]), []);
-assertArraysEqual(middle([1, 2]), []);
-assertArraysEqual(middle([1, 2, 3, 4, 5]), [3]);
-assertArraysEqual(middle([1, 2, 3, 4]), [2, 3]);
+module.exports = middle;
