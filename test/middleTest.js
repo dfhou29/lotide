@@ -1,5 +1,4 @@
-const middle = require('../middle');
-const head = require("../head");
+const middle = require('../index').middle;
 
 const assert = require('chai').assert;
 

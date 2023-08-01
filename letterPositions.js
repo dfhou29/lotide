@@ -10,8 +10,7 @@ const letterPositions = function(sentence) {
       }
     }
   }
-  console.log("trimmed sentence:", trimmedSentence);
-  console.log("results:", results);
+
   return results;
 };
 

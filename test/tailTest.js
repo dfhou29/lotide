@@ -1,5 +1,5 @@
-const assertEqual = require('../assertEqual');
-const tail = require('../tail');
+const tail = require('../index').tail;
+
 const assert = require('chai').assert;
 describe('Tests for tail()', () => {
   it('returns [] for []', () => {

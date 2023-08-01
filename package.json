@@ -1,7 +1,7 @@
 {
-  "name": "lotide",
+  "name": "@dfhou29/lotide",
   "version": "1.0.0",
-  "description": "A cloned version of Lodash library",
+  "description": "A cloned version of Lodash(https://lodash.com) library",
   "main": "assertArraysEqual.js",
   "directories": {
     "test": "test"
@@ -13,7 +13,7 @@
     "type": "git",
     "url": "git+https://github.com/dfhou29/lotide.git"
   },
-  "author": "",
+  "author": "Difan Hou",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/dfhou29/lotide/issues"
@@ -22,8 +22,5 @@
   "devDependencies": {
     "chai": "^4.3.7",
     "mocha": "^9.2.2"
-  },
-  "dependencies": {
-    "gitignore": "^0.7.0"
   }
 }
