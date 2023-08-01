@@ -1,19 +1,3 @@
-const eqArrays = function(actual, expected) {
-  if (actual.length !== expected.length) {
-    return false;
-  }
-  for (let x = 0; x < actual.length; x++) {
-    if (actual[x] !== expected[x]) {
-      return false;
-    }
-  }
-  return true;
-};
-
-const assertArraysEqual = function(actual, expected) {
-  eqArrays(actual, expected) ? console.log(`✅Assertion passed: ${actual} === ${expected}`) : console.log(`❌Assertion failed: ${actual} !== ${expected}`);
-};
-
 const without = function(source, itemsToRemove) {
   // declare output array
   let output = [];
@@ -35,8 +19,4 @@ const without = function(source, itemsToRemove) {
   return output;
 };
 
-assertArraysEqual(without([1, 2, 3], [1]), [2, 3]);
-assertArraysEqual(without(["1", "2", "3"], [1, 2, "3"]), ["1", "2"]);
-assertArraysEqual(without(['a', 'b', 'c'], [1, 2, 3]), ['a', 'b', 'c']);
-assertArraysEqual(without([1, 2, 3], []), [1, 2, 3]);
-assertArraysEqual(without([], [1, 2, 3]), []);
+module.exports = without;

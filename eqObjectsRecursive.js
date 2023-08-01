@@ -1,24 +1,6 @@
-const assertEqual = function(actual, expected) {
-  if (actual === expected) {
-    console.log(`✅Assertion passed: ${actual} === ${expected}`);
-  } else {
-    console.log(`❌Assertion failed: ${actual} !== ${expected}`);
-  }
-};
+const eqArrays = require('./eqArrays');
 
-const eqArrays = function(actual, expected) {
-  if (actual.length !== expected.length) {
-    return false;
-  }
-  for (let x = 0; x < actual.length; x++) {
-    if (actual[x] !== expected[x]) {
-      return false;
-    }
-  }
-  return true;
-};
-
-const eqObjects = (object1, object2) => {
+const eqObjectsRecursive = (object1, object2) => {
   console.log('object1:', object1);
   console.log('object2:', object2);
   if (Object.keys(object1).length !== Object.keys(object2).length) return false;
@@ -41,8 +23,4 @@ const eqObjects = (object1, object2) => {
   return true;
 }
 
-
-assertEqual(eqObjects({ a: { z: 1 }, b: 2 }, { a: { z: 1 }, b: 2 }), true);
-assertEqual(eqObjects({ a: { z: 1 }, b: 2 },{ a: { y: 0, z: 1 }, b: 2 } ), false);
-assertEqual(eqObjects({ a: { y: 0, z: 1 }, b: 2 }, { a: 1, b: 2 }), false);
-assertEqual(eqObjects({ a: { y: [0, 1], z: {i: 0, j: 0} }, b: {k: 0, l: 0} }, { a: { y: [0, 1], z: {i: 0, j: 0} }, b: {k: 0, l: 0} }), true);
+module.exports = eqObjectsRecursive;
