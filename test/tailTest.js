@@ -1,20 +1,20 @@
 const assertEqual = require('../assertEqual');
 const tail = require('../tail');
-
-const testArray = ['Lighthouse', 'Labs', 'Exercise'];
-const result = tail(testArray);
-assertEqual(result[0], 'Labs');
-assertEqual(result[1], 'Exercise');
-
-
-// test case 2
-const testArray2 = [];
-const result2 = tail(testArray2);
-assertEqual(result2[0], undefined);
-assertEqual(testArray2.length, 0);
-
-// test case 3
-const testArray3 = [1];
-const result3 = tail(testArray3);
-assertEqual(result3[0], undefined);
-assertEqual(testArray3.length, 1);
+const assert = require('chai').assert;
+describe('Tests for tail()', () => {
+  it('returns [] for []', () => {
+    const actual = tail([]);
+    const expected = [];
+    assert.deepEqual(actual, expected);
+  });
+  it('returns [Lab, Exercise] for [Lighthouse, Labs, Exercise]', () => {
+    const actual = tail(['Lighthouse', 'Labs', 'Exercise']);
+    const expected = ['Labs', 'Exercise'];
+    assert.deepEqual(actual, expected);
+  });
+  it('returns [] for [1]', () => {
+    const actual = tail([1]);
+    const expected = [];
+    assert.deepEqual(actual, expected);
+  });
+})
